@@ -1,0 +1,852 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#fffaf5">
+    <meta
+      name="description"
+      content="Confeitaria artesanal feita com carinho. Conheça nosso cardápio e faça sua encomenda."
+    >
+    <title>Doce Afeto | Confeitaria artesanal</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <header class="site-header" id="inicio">
+      <a class="brand" href="#inicio" aria-label="Doce Afeto — início">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 40 40" fill="none">
+            <path d="M20 34s-13-7.8-13-17.1C7 9 16.2 7.5 20 14c3.8-6.5 13-5 13 2.9C33 26.2 20 34 20 34Z" />
+            <path d="M13 23h14M16 18h8" />
+          </svg>
+        </span>
+        <span class="brand-name">doce <strong>afeto</strong></span>
+      </a>
+
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-label="Abrir menu"
+        aria-expanded="false"
+        aria-controls="primary-navigation"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="primary-navigation" id="primary-navigation" aria-label="Navegação principal">
+        <a href="#inicio">Início</a>
+        <a href="#cardapio">Cardápio</a>
+        <a href="#bolos">Bolos</a>
+        <a href="#doces">Doces</a>
+        <a href="#encomendas">Encomendas</a>
+        <a href="#sobre">Sobre nós</a>
+        <a href="#contato">Contato</a>
+        <a class="order-button" href="#encomendas">
+          Fazer encomenda
+          <span aria-hidden="true">↗</span>
+        </a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="welcome" aria-labelledby="welcome-title">
+        <div class="welcome-content">
+          <p class="eyebrow">Feito à mão, com carinho</p>
+          <h1 id="welcome-title">Momentos especiais merecem um <span>doce especial.</span></h1>
+          <p class="welcome-copy">
+            Bolos e doces artesanais feitos com carinho para deixar sua comemoração ainda mais saborosa.
+          </p>
+          <div class="welcome-actions">
+            <a class="order-button hero-button" href="#cardapio">Ver cardápio</a>
+            <a class="order-button hero-button hero-button-outline" href="#encomendas">
+              Fazer encomenda <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </div>
+        <figure class="welcome-photo">
+          <img
+            src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&amp;fit=crop&amp;w=1400&amp;q=85"
+            alt="Bolo de chocolate decorado com cobertura e rosetas de chocolate"
+            fetchpriority="high"
+          >
+        </figure>
+      </section>
+
+      <section class="content-section featured-section" id="cardapio" aria-labelledby="featured-title">
+        <div class="featured-heading">
+          <p class="eyebrow">Com carinho, do nosso forno</p>
+          <h2 id="featured-title">Produtos em destaque</h2>
+          <p class="catalog-intro">Conheça nossos bolos, cupcakes, brownies e tortas, preparados para deixar cada momento ainda mais gostoso.</p>
+          <div class="catalog-filters" role="group" aria-label="Filtrar produtos do catálogo">
+            <button class="catalog-filter is-active" type="button" data-catalog-filter="all" aria-pressed="true">
+              Todos os produtos
+            </button>
+            <button class="catalog-filter" type="button" data-catalog-filter="favorites" aria-pressed="false">
+              Favoritos
+            </button>
+          </div>
+          <p class="favorites-status" id="favorites-status" role="status" aria-live="polite"></p>
+        </div>
+        <div class="favorites-empty" id="favorites-empty" hidden>
+          <p>Você ainda não tem produtos favoritos. Explore o catálogo e toque em “Favoritar” nos produtos que gostar.</p>
+          <button class="order-button" type="button" data-catalog-filter="all">Voltar ao catálogo completo</button>
+        </div>
+        <div class="sweet-category" id="bolos" aria-labelledby="featured-cakes-title">
+          <h3 class="sweet-category-title" id="featured-cakes-title">Bolos</h3>
+          <div class="featured-grid" data-product-category="bolos"></div>
+        </div>
+        <div class="sweet-category" aria-labelledby="featured-cupcakes-title">
+          <h3 class="sweet-category-title" id="featured-cupcakes-title">Cupcakes</h3>
+          <div class="featured-grid" data-product-category="cupcakes"></div>
+        </div>
+        <div class="sweet-category" aria-labelledby="featured-brownies-title">
+          <h3 class="sweet-category-title" id="featured-brownies-title">Brownies</h3>
+          <div class="featured-grid" data-product-category="brownies"></div>
+        </div>
+        <div class="sweet-category" aria-labelledby="featured-pies-title">
+          <h3 class="sweet-category-title" id="featured-pies-title">Tortas</h3>
+          <div class="featured-grid" data-product-category="tortas"></div>
+        </div>
+      </section>
+      <section class="content-section featured-section" id="doces" aria-labelledby="sweets-title">
+        <div class="featured-heading">
+          <p class="eyebrow">Pequenas alegrias</p>
+          <h2 id="sweets-title">Nossos doces</h2>
+          <p>Docinhos feitos à mão para presentear, comemorar e se deliciar.</p>
+        </div>
+        <div class="sweet-category" aria-labelledby="all-sweets-title">
+          <h3 class="sweet-category-title" id="all-sweets-title">Todos</h3>
+          <p class="category-placeholder">Confira as categorias e os produtos em destaque.</p>
+        </div>
+        <div class="sweet-category" aria-labelledby="cupcakes-title">
+          <h3 class="sweet-category-title" id="cupcakes-title">Cupcakes</h3>
+          <p class="category-placeholder">Confira nossos cupcakes em Produtos em destaque.</p>
+        </div>
+        <div class="sweet-category" aria-labelledby="brownies-title">
+          <h3 class="sweet-category-title" id="brownies-title">Brownies</h3>
+          <p class="category-placeholder">Confira nossos brownies em Produtos em destaque.</p>
+        </div>
+        <div class="sweet-category" aria-labelledby="tortas-title">
+          <h3 class="sweet-category-title" id="tortas-title">Tortas</h3>
+          <p class="category-placeholder">Confira nossas tortas em Produtos em destaque.</p>
+        </div>
+        <div class="sweet-category" aria-labelledby="sweets-cakes-title">
+          <h3 class="sweet-category-title" id="sweets-cakes-title">Bolos</h3>
+          <p class="category-placeholder">Confira nossos bolos em Produtos em destaque.</p>
+        </div>
+        <div class="sweet-category" aria-labelledby="kits-title">
+          <h3 class="sweet-category-title" id="kits-title">Kits</h3>
+          <p class="category-placeholder">Novidades em breve.</p>
+        </div>
+      </section>
+      <section class="custom-cake-section" id="bolos-personalizados" aria-labelledby="custom-cake-title">
+        <div class="custom-cake-content">
+          <p class="eyebrow">Feito especialmente para você</p>
+          <h2 id="custom-cake-title">Tem uma ideia? Nós transformamos em bolo.</h2>
+          <p class="custom-cake-intro">
+            Criamos bolos personalizados para celebrar momentos únicos, com detalhes pensados para combinar com a sua ocasião.
+          </p>
+          <ul class="occasion-grid" aria-label="Ocasiões para bolos personalizados">
+            <li>
+              <h3>Aniversários</h3>
+              <p>Um bolo especial para celebrar cada novo ciclo.</p>
+            </li>
+            <li>
+              <h3>Casamentos</h3>
+              <p>Sabores e acabamentos à altura de um dia inesquecível.</p>
+            </li>
+            <li>
+              <h3>Chás de bebê</h3>
+              <p>Delicadeza e carinho para dar boas-vindas.</p>
+            </li>
+            <li>
+              <h3>Formaturas</h3>
+              <p>Uma doce comemoração para uma grande conquista.</p>
+            </li>
+            <li>
+              <h3>Festas infantis</h3>
+              <p>Criações divertidas para tornar a festa ainda mais especial.</p>
+            </li>
+            <li>
+              <h3>Eventos corporativos</h3>
+              <p>Bolos personalizados para celebrar e compartilhar com sua equipe.</p>
+            </li>
+          </ul>
+          <a class="order-button custom-cake-cta" href="#encomendas">
+            Solicitar orçamento <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+      </section>
+      <section class="content-section content-section-alt" id="encomendas">
+        <p class="eyebrow">Vamos preparar algo especial?</p>
+        <h2>Encomendas</h2>
+        <p>Conte para nós o que você está imaginando. Será um prazer fazer parte desse momento.</p>
+        <div class="order-builder">
+          <div class="order-summary">
+            <h3>Seu pedido</h3>
+            <ul class="order-items" id="order-items">
+              <li class="order-empty">Seu pedido ainda está vazio.</li>
+            </ul>
+          </div>
+          <label class="order-observations" for="order-observations">
+            Observações para o pedido
+            <textarea id="order-observations" rows="4" placeholder="Descreva detalhes ou preferências do pedido."></textarea>
+          </label>
+          <div class="order-message">
+            <label for="whatsapp-message">Mensagem pronta para o WhatsApp</label>
+            <textarea id="whatsapp-message" rows="8" readonly placeholder="Adicione produtos ao pedido para montar a mensagem."></textarea>
+            <div class="section-order-actions">
+              <button class="order-button section-order-whatsapp" id="copy-order-message" type="button" disabled>
+                Copiar mensagem para o WhatsApp
+              </button>
+              <a class="order-button section-order" href="#cardapio">Continuar escolhendo</a>
+            </div>
+            <p class="order-status" id="order-status" role="status" aria-live="polite"></p>
+          </div>
+        </div>
+      </section>
+      <section class="content-section about-section" id="sobre">
+        <p class="eyebrow">Nossa história</p>
+        <h2>Sobre nós</h2>
+        <p>Acreditamos que carinho também se sente no sabor — e cada receita é feita com esse cuidado.</p>
+        <p class="about-copy">
+          Tudo começou com uma pequena cozinha e uma paixão por transformar receitas em momentos especiais. Com dedicação e carinho, cada preparo se tornou uma oportunidade de compartilhar algo feito com afeto.
+        </p>
+        <p class="about-copy">
+          Hoje, seguimos criando bolos e doces artesanalmente, cuidando de cada detalhe e escolhendo ingredientes com atenção. Queremos estar presentes nas suas celebrações e tornar cada encontro ainda mais gostoso.
+        </p>
+      </section>
+      <section class="content-section review-section" id="avaliacoes" aria-labelledby="reviews-title">
+        <p class="eyebrow">Palavras que adoçam nosso dia</p>
+        <h2 id="reviews-title">Avaliações</h2>
+        <div class="review-grid">
+          <article class="review-card">
+            <span class="review-stars" role="img" aria-label="5 de 5 estrelas">★★★★★</span>
+            <blockquote>
+              <p>O bolo ficou lindo e delicioso. O cuidado da equipe fez toda a diferença na nossa comemoração!</p>
+            </blockquote>
+            <div class="review-author">
+              <img
+                src="https://randomuser.me/api/portraits/women/44.jpg"
+                alt="Retrato ilustrativo de Mariana Alves"
+                width="52"
+                height="52"
+                loading="lazy"
+                referrerpolicy="no-referrer"
+              >
+              <p>Mariana Alves</p>
+            </div>
+          </article>
+          <article class="review-card">
+            <span class="review-stars" role="img" aria-label="5 de 5 estrelas">★★★★★</span>
+            <blockquote>
+              <p>Atendimento carinhoso, entrega caprichada e doces maravilhosos. Encomendar foi muito fácil.</p>
+            </blockquote>
+            <div class="review-author">
+              <img
+                src="https://randomuser.me/api/portraits/men/32.jpg"
+                alt="Retrato ilustrativo de Rafael Duarte"
+                width="52"
+                height="52"
+                loading="lazy"
+                referrerpolicy="no-referrer"
+              >
+              <p>Rafael Duarte</p>
+            </div>
+          </article>
+          <article class="review-card">
+            <span class="review-stars" role="img" aria-label="5 de 5 estrelas">★★★★★</span>
+            <blockquote>
+              <p>Todos elogiaram o sabor e a apresentação. Dá para sentir o carinho em cada detalhe.</p>
+            </blockquote>
+            <div class="review-author">
+              <img
+                src="https://randomuser.me/api/portraits/women/68.jpg"
+                alt="Retrato ilustrativo de Elisa Nogueira"
+                width="52"
+                height="52"
+                loading="lazy"
+                referrerpolicy="no-referrer"
+              >
+              <p>Elisa Nogueira</p>
+            </div>
+          </article>
+          <article class="review-card">
+            <span class="review-stars" role="img" aria-label="5 de 5 estrelas">★★★★★</span>
+            <blockquote>
+              <p>Uma experiência especial do começo ao fim. Com certeza vamos encomendar novamente!</p>
+            </blockquote>
+            <div class="review-author">
+              <img
+                src="https://randomuser.me/api/portraits/men/75.jpg"
+                alt="Retrato ilustrativo de Bruno Valença"
+                width="52"
+                height="52"
+                loading="lazy"
+                referrerpolicy="no-referrer"
+              >
+              <p>Bruno Valença</p>
+            </div>
+          </article>
+        </div>
+      </section>
+      <section class="featured-section kits-section" id="kits-presentes" aria-labelledby="kits-presentes-title">
+        <div class="featured-heading">
+          <p class="eyebrow">Carinho em cada detalhe</p>
+          <h2 id="kits-presentes-title">Kits e presentes</h2>
+          <p>Presentes que matam a fome e aquecem o coração. Encontre uma opção deliciosa para surpreender em qualquer ocasião.</p>
+        </div>
+        <div class="kit-grid">
+          <article class="kit-card">
+            <div class="kit-image-placeholder" role="img" aria-label="Espaço reservado para a foto do Kit Aniversário">
+              <span>Foto em breve</span>
+            </div>
+            <div class="kit-card-content">
+              <h3>Kit Aniversário</h3>
+              <p>Uma seleção especial para deixar o dia de comemorar ainda mais gostoso.</p>
+            </div>
+          </article>
+          <article class="kit-card">
+            <div class="kit-image-placeholder" role="img" aria-label="Espaço reservado para a foto da Caixa de Brigadeiros">
+              <span>Foto em breve</span>
+            </div>
+            <div class="kit-card-content">
+              <h3>Caixa de Brigadeiros</h3>
+              <p>Brigadeiros preparados com carinho, perfeitos para presentear e compartilhar.</p>
+            </div>
+          </article>
+          <article class="kit-card">
+            <div class="kit-image-placeholder" role="img" aria-label="Espaço reservado para a foto do kit Café da Tarde">
+              <span>Foto em breve</span>
+            </div>
+            <div class="kit-card-content">
+              <h3>Café da Tarde</h3>
+              <p>Uma pausa deliciosa com quitutes feitos para acompanhar bons momentos.</p>
+            </div>
+          </article>
+          <article class="kit-card">
+            <div class="kit-image-placeholder" role="img" aria-label="Espaço reservado para a foto do Box Romântico">
+              <span>Foto em breve</span>
+            </div>
+            <div class="kit-card-content">
+              <h3>Box Romântico</h3>
+              <p>Uma surpresa cheia de doçura para celebrar a dois e demonstrar seu carinho.</p>
+            </div>
+          </article>
+          <article class="kit-card">
+            <div class="kit-image-placeholder" role="img" aria-label="Espaço reservado para a foto do kit Mini Bolo mais Docinhos">
+              <span>Foto em breve</span>
+            </div>
+            <div class="kit-card-content">
+              <h3>Mini Bolo + Docinhos</h3>
+              <p>Uma combinação charmosa de bolo e docinhos para comemorações intimistas.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+      <section class="content-section delivery-section" id="entrega-retirada" aria-labelledby="delivery-title">
+        <div class="delivery-content">
+          <p class="eyebrow">Informações importantes</p>
+          <h2 id="delivery-title">Entrega e retirada</h2>
+          <p class="delivery-intro">Confira as opções e condições para receber seu pedido ou retirá-lo com a gente.</p>
+          <div class="delivery-grid">
+            <article class="delivery-card">
+              <span class="delivery-icon" aria-hidden="true">⌖</span>
+              <h3>Região de entrega</h3>
+              <p>Atendemos toda a região de <strong>Garopaba – SC</strong>.</p>
+            </article>
+            <article class="delivery-card">
+              <span class="delivery-icon" aria-hidden="true">$</span>
+              <h3>Taxa de entrega</h3>
+              <p>Taxa fixa de <strong>R$ 10,00</strong>.</p>
+            </article>
+            <article class="delivery-card">
+              <span class="delivery-icon" aria-hidden="true">◷</span>
+              <h3>Horário de entrega</h3>
+              <p>Entregas disponíveis das <strong>9h às 22h</strong>.</p>
+            </article>
+            <article class="delivery-card">
+              <span class="delivery-icon" aria-hidden="true">3</span>
+              <h3>Prazo para encomendas</h3>
+              <p>Faça seu pedido com pelo menos <strong>3 dias de antecedência</strong>.</p>
+            </article>
+            <article class="delivery-card">
+              <span class="delivery-icon" aria-hidden="true">⌂</span>
+              <h3>Retirada no local</h3>
+              <p>Você também pode retirar seu pedido. Combine o endereço e o horário pelo WhatsApp.</p>
+            </article>
+            <article class="delivery-card delivery-payment">
+              <span class="delivery-icon" aria-hidden="true">✓</span>
+              <h3>Formas de pagamento</h3>
+              <p>Pix, cartão de crédito, cartão de débito ou dinheiro.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section class="content-section faq-section" id="faq" aria-labelledby="faq-title">
+        <p class="eyebrow">Dúvidas frequentes</p>
+        <h2 id="faq-title">Perguntas e respostas</h2>
+        <p class="faq-intro">Reunimos aqui algumas informações para ajudar a planejar seu pedido.</p>
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary>Com quanto tempo devo fazer minha encomenda?</summary>
+            <p>Recomendamos fazer seu pedido com 2 a 3 dias de antecedência. Para bolos personalizados ou datas concorridas, entre em contato o quanto antes para verificarmos a disponibilidade.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Vocês fazem bolos personalizados?</summary>
+            <p>Sim! Criamos bolos personalizados para diferentes celebrações. Conte sua ideia, a ocasião e os detalhes que gostaria de incluir para conversarmos sobre as possibilidades.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Posso escolher o recheio?</summary>
+            <p>Sim. Você pode consultar as opções de recheio disponíveis no momento da encomenda e escolher a combinação que mais gostar.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Vocês entregam?</summary>
+            <p>Sim! Fazemos entregas em toda a região de Garopaba – SC, das 9h às 22h. A taxa de entrega é de R$ 10,00.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Quais são as formas de pagamento?</summary>
+            <p>Aceitamos Pix, cartão de crédito, cartão de débito e dinheiro.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Posso enviar uma foto de referência?</summary>
+            <p>Sim! Envie sua foto de referência por WhatsApp para compartilhar sua ideia com a gente.</p>
+          </details>
+        </div>
+      </section>
+      <section class="content-section contact-section" id="contato" aria-labelledby="contact-title">
+        <p class="eyebrow">Adoraríamos conversar</p>
+        <h2 id="contact-title">Contato</h2>
+        <p class="contact-intro">Fale com a gente ou confira nossas informações de atendimento.</p>
+        <div class="contact-grid">
+          <article class="contact-card">
+            <span class="contact-icon" aria-hidden="true">⌖</span>
+            <h3>Endereço</h3>
+            <p>Não informado</p>
+          </article>
+          <article class="contact-card">
+            <span class="contact-icon" aria-hidden="true">↗</span>
+            <h3>Google Maps</h3>
+            <p>Não informado</p>
+          </article>
+          <article class="contact-card">
+            <span class="contact-icon" aria-hidden="true">◉</span>
+            <h3>WhatsApp</h3>
+            <p>Não informado</p>
+          </article>
+          <article class="contact-card">
+            <span class="contact-icon" aria-hidden="true">◎</span>
+            <h3>Instagram</h3>
+            <p>Não informado</p>
+          </article>
+          <article class="contact-card">
+            <span class="contact-icon" aria-hidden="true">◷</span>
+            <h3>Horário de funcionamento</h3>
+            <p>Todos os dias, das <strong>8h às 19h</strong>.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-main">
+        <div class="footer-brand">
+          <a class="footer-brand-name" href="#inicio">🍰 Doce Afeto</a>
+          <p>Bolos e doces feitos para transformar momentos em memórias.</p>
+        </div>
+        <nav class="footer-navigation" aria-label="Navegação do rodapé">
+          <h2>Explore</h2>
+          <a href="#inicio">Início</a>
+          <a href="#cardapio">Cardápio</a>
+          <a href="#encomendas">Encomendas</a>
+          <a href="#sobre">Sobre nós</a>
+          <a href="#contato">Contato</a>
+        </nav>
+        <div class="footer-contact">
+          <h2>Fale com a gente</h2>
+          <p><span aria-hidden="true">📱</span> WhatsApp não informado</p>
+          <p><span aria-hidden="true">📷</span> Instagram não informado</p>
+          <a href="#contato">
+            <span aria-hidden="true">📍</span> Endereço não informado
+          </a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Doce Afeto</p>
+        <p>Feito com carinho, do nosso forno para seus momentos especiais.</p>
+      </div>
+    </footer>
+
+    <script src="products.js"></script>
+    <script>
+      const favoriteStorageKey = "doce-afeto:favoritos";
+      const favoritos = new Set();
+      const catalogo = document.querySelector("#cardapio");
+      const statusFavoritos = document.querySelector("#favorites-status");
+      const mensagemFavoritosVazios = document.querySelector("#favorites-empty");
+      let filtroCatalogo = "all";
+
+      const estadoPedido = {
+        itens: [],
+        observacoes: "",
+      };
+
+      function carregarFavoritos() {
+        try {
+          const salvos = JSON.parse(window.localStorage.getItem(favoriteStorageKey) || "[]");
+          if (!Array.isArray(salvos) || salvos.some((id) => typeof id !== "string")) {
+            throw new TypeError("Os favoritos armazenados não têm o formato esperado.");
+          }
+
+          const idsValidos = new Set(produtos.map((produto) => produto.id));
+          salvos.filter((id) => idsValidos.has(id)).forEach((id) => favoritos.add(id));
+        } catch (error) {
+          console.error("Não foi possível carregar os favoritos do navegador.", error);
+          statusFavoritos.textContent = "Não foi possível carregar os favoritos salvos neste navegador.";
+        }
+      }
+
+      function salvarFavoritos() {
+        try {
+          window.localStorage.setItem(favoriteStorageKey, JSON.stringify([...favoritos]));
+          statusFavoritos.textContent = "";
+        } catch (error) {
+          console.error("Não foi possível salvar os favoritos no navegador.", error);
+          statusFavoritos.textContent = "Não foi possível salvar os favoritos. Verifique as permissões de armazenamento do navegador.";
+        }
+      }
+
+      carregarFavoritos();
+
+      function criarCartaoProduto(produto, indiceProduto) {
+        const cartao = document.createElement("article");
+        cartao.className = "featured-card";
+        cartao.dataset.productIndex = String(indiceProduto);
+        cartao.dataset.productId = produto.id;
+
+        const imagem = document.createElement("img");
+        imagem.src = produto.imagem;
+        imagem.alt = produto.textoAlternativo;
+        imagem.loading = "lazy";
+
+        const conteudo = document.createElement("div");
+        conteudo.className = "featured-card-content";
+
+        const nome = document.createElement("h3");
+        nome.textContent = produto.nome;
+
+        const botaoFavorito = document.createElement("button");
+        botaoFavorito.className = "favorite-toggle";
+        botaoFavorito.type = "button";
+        botaoFavorito.dataset.favoriteToggle = "";
+        botaoFavorito.dataset.productId = produto.id;
+        botaoFavorito.setAttribute("aria-pressed", String(favoritos.has(produto.id)));
+        botaoFavorito.setAttribute(
+          "aria-label",
+          favoritos.has(produto.id)
+            ? `Remover ${produto.nome} dos favoritos`
+            : `Adicionar ${produto.nome} aos favoritos`,
+        );
+        botaoFavorito.textContent = favoritos.has(produto.id) ? "♥ Favoritado" : "♡ Favoritar";
+
+        const descricao = document.createElement("p");
+        descricao.textContent = produto.descricao;
+
+        const opcoes = produto.opcoes || [{ nome: "Única opção", preco: produto.preco }];
+        if (!produto.opcoes) {
+          const preco = document.createElement("p");
+          preco.className = "featured-price";
+          if (produto.preco === null) {
+            preco.textContent = "Preço provisório";
+          } else {
+            preco.append("A partir de ");
+            const valor = document.createElement("strong");
+            valor.textContent = `R$ ${produto.preco}`;
+            preco.append(valor);
+          }
+          conteudo.append(preco);
+        }
+
+        const controles = document.createElement("div");
+        controles.className = "product-order-controls";
+
+        const rotuloOpcao = document.createElement("label");
+        rotuloOpcao.textContent = "Opção";
+        const seletorOpcao = document.createElement("select");
+        seletorOpcao.dataset.productOption = "";
+        seletorOpcao.setAttribute("aria-label", `Opção para ${produto.nome}`);
+        opcoes.forEach((opcao, indice) => {
+          const escolha = document.createElement("option");
+          escolha.value = String(indice);
+          escolha.textContent = opcao.nome;
+          seletorOpcao.append(escolha);
+        });
+        rotuloOpcao.append(seletorOpcao);
+
+        const rotuloQuantidade = document.createElement("label");
+        rotuloQuantidade.textContent = "Quantidade";
+        const entradaQuantidade = document.createElement("input");
+        entradaQuantidade.type = "number";
+        entradaQuantidade.min = "1";
+        entradaQuantidade.step = "1";
+        entradaQuantidade.value = "1";
+        entradaQuantidade.inputMode = "numeric";
+        entradaQuantidade.dataset.productQuantity = "";
+        entradaQuantidade.setAttribute("aria-label", `Quantidade de ${produto.nome}`);
+        rotuloQuantidade.append(entradaQuantidade);
+
+        const botao = document.createElement("button");
+        botao.className = "order-button featured-order";
+        botao.type = "button";
+        botao.dataset.addProduct = "";
+        botao.textContent = "Adicionar ao pedido";
+
+        controles.append(rotuloOpcao, rotuloQuantidade, botao);
+        conteudo.append(botaoFavorito, nome, descricao, controles);
+        cartao.append(imagem, conteudo);
+        return cartao;
+      }
+
+      document.querySelectorAll("[data-product-category]").forEach((container) => {
+        const categoria = container.dataset.productCategory;
+        const cartoes = produtos
+          .map((produto, indiceProduto) => ({ produto, indiceProduto }))
+          .filter(({ produto }) => produto.categoria === categoria)
+          .map(({ produto, indiceProduto }) => criarCartaoProduto(produto, indiceProduto));
+        container.replaceChildren(...cartoes);
+      });
+
+      function atualizarFiltroCatalogo() {
+        const cartoes = catalogo.querySelectorAll(".featured-card");
+        let quantidadeVisivel = 0;
+
+        catalogo.querySelectorAll("[data-catalog-filter]").forEach((botao) => {
+          const ativo = botao.dataset.catalogFilter === filtroCatalogo;
+          botao.classList.toggle("is-active", ativo);
+          botao.setAttribute("aria-pressed", String(ativo));
+        });
+
+        cartoes.forEach((cartao) => {
+          const deveExibir = filtroCatalogo === "all" || favoritos.has(cartao.dataset.productId);
+          cartao.hidden = !deveExibir;
+          if (deveExibir) quantidadeVisivel += 1;
+        });
+
+        catalogo.querySelectorAll(".sweet-category").forEach((categoria) => {
+          categoria.hidden = !Array.from(categoria.querySelectorAll(".featured-card"))
+            .some((cartao) => !cartao.hidden);
+        });
+
+        mensagemFavoritosVazios.hidden = quantidadeVisivel > 0;
+      }
+
+      catalogo.addEventListener("click", (event) => {
+        const botaoFiltro = event.target.closest("[data-catalog-filter]");
+        if (botaoFiltro) {
+          filtroCatalogo = botaoFiltro.dataset.catalogFilter;
+          atualizarFiltroCatalogo();
+          return;
+        }
+
+        const botaoFavorito = event.target.closest("[data-favorite-toggle]");
+        if (botaoFavorito) {
+          const idProduto = botaoFavorito.dataset.productId;
+          if (favoritos.has(idProduto)) {
+            favoritos.delete(idProduto);
+            statusFavoritos.textContent = "Produto removido dos favoritos.";
+          } else {
+            favoritos.add(idProduto);
+            statusFavoritos.textContent = "Produto adicionado aos favoritos.";
+          }
+
+          salvarFavoritos();
+          atualizarBotoesFavorito(idProduto);
+          atualizarFiltroCatalogo();
+          return;
+        }
+
+        const botaoAdicionar = event.target.closest("[data-add-product]");
+        if (botaoAdicionar) adicionarProdutoAoPedido(botaoAdicionar);
+      });
+
+      function atualizarBotoesFavorito(idProduto) {
+        const produto = produtos.find((item) => item.id === idProduto);
+        if (!produto) return;
+
+        catalogo.querySelectorAll("[data-favorite-toggle]").forEach((botao) => {
+          if (botao.dataset.productId !== idProduto) return;
+
+          const favoritado = favoritos.has(idProduto);
+          botao.classList.toggle("is-favorite", favoritado);
+          botao.setAttribute("aria-pressed", String(favoritado));
+          botao.setAttribute(
+            "aria-label",
+            favoritado
+              ? `Remover ${produto.nome} dos favoritos`
+              : `Adicionar ${produto.nome} aos favoritos`,
+          );
+          botao.textContent = favoritado ? "♥ Favoritado" : "♡ Favoritar";
+        });
+      }
+
+      catalogo.querySelectorAll("[data-favorite-toggle]").forEach((botao) => {
+        if (favoritos.has(botao.dataset.productId)) botao.classList.add("is-favorite");
+      });
+      atualizarFiltroCatalogo();
+
+      const listaPedido = document.querySelector("#order-items");
+      const campoObservacoes = document.querySelector("#order-observations");
+      const campoMensagem = document.querySelector("#whatsapp-message");
+      const botaoCopiarMensagem = document.querySelector("#copy-order-message");
+      const statusPedido = document.querySelector("#order-status");
+
+      function montarMensagemPedido() {
+        const linhasItens = estadoPedido.itens.map(
+          (item) => `- ${item.produto} — opção: ${item.opcao} — quantidade: ${item.quantidade}`,
+        );
+        const observacoes = estadoPedido.observacoes.trim() || "Nenhuma.";
+        return [
+          "Olá! Gostaria de solicitar um orçamento.",
+          "",
+          "Meu pedido:",
+          ...linhasItens,
+          "",
+          `Observações: ${observacoes}`,
+        ].join("\n");
+      }
+
+      function renderizarPedido() {
+        listaPedido.replaceChildren();
+
+        if (estadoPedido.itens.length === 0) {
+          const vazio = document.createElement("li");
+          vazio.className = "order-empty";
+          vazio.textContent = "Seu pedido ainda está vazio.";
+          listaPedido.append(vazio);
+          campoMensagem.value = "";
+          campoMensagem.placeholder = "Adicione produtos ao pedido para montar a mensagem.";
+          botaoCopiarMensagem.disabled = true;
+          statusPedido.textContent = "";
+          return;
+        }
+
+        estadoPedido.itens.forEach((item, indice) => {
+          const linha = document.createElement("li");
+          const descricao = document.createElement("span");
+          descricao.textContent = `${item.produto} — ${item.opcao} × ${item.quantidade}`;
+
+          const remover = document.createElement("button");
+          remover.className = "remove-order-item";
+          remover.type = "button";
+          remover.dataset.removeOrderItem = String(indice);
+          remover.textContent = "Remover";
+          remover.setAttribute("aria-label", `Remover ${item.produto} (${item.opcao}) do pedido`);
+
+          linha.append(descricao, remover);
+          listaPedido.append(linha);
+        });
+
+        campoMensagem.value = montarMensagemPedido();
+        campoMensagem.placeholder = "";
+        botaoCopiarMensagem.disabled = false;
+      }
+
+      function adicionarProdutoAoPedido(botaoAdicionar) {
+        const cartao = botaoAdicionar.closest(".featured-card");
+        const indiceProduto = Number(cartao.dataset.productIndex);
+        const produto = produtos[indiceProduto];
+        const seletorOpcao = cartao.querySelector("[data-product-option]");
+        const entradaQuantidade = cartao.querySelector("[data-product-quantity]");
+        const quantidade = Number(entradaQuantidade.value);
+
+        if (!Number.isSafeInteger(quantidade) || quantidade < 1) {
+          entradaQuantidade.setCustomValidity("Informe uma quantidade inteira igual ou maior que 1.");
+          entradaQuantidade.reportValidity();
+          entradaQuantidade.addEventListener("input", () => entradaQuantidade.setCustomValidity(""), { once: true });
+          return;
+        }
+
+        const opcao = (produto.opcoes || [{ nome: "Única opção", preco: produto.preco }])[
+          Number(seletorOpcao.value)
+        ];
+        if (!opcao) {
+          statusPedido.textContent = "Não foi possível identificar a opção selecionada. Tente novamente.";
+          return;
+        }
+
+        const itemExistente = estadoPedido.itens.find(
+          (item) => item.produto === produto.nome && item.opcao === opcao.nome,
+        );
+        if (itemExistente) {
+          itemExistente.quantidade += quantidade;
+        } else {
+          estadoPedido.itens.push({
+            produto: produto.nome,
+            opcao: opcao.nome,
+            quantidade,
+          });
+        }
+
+        statusPedido.textContent = `${produto.nome} adicionado ao pedido.`;
+        renderizarPedido();
+      }
+
+      listaPedido.addEventListener("click", (event) => {
+        const botaoRemover = event.target.closest("[data-remove-order-item]");
+        if (!botaoRemover) return;
+
+        estadoPedido.itens.splice(Number(botaoRemover.dataset.removeOrderItem), 1);
+        statusPedido.textContent = "Item removido do pedido.";
+        renderizarPedido();
+      });
+
+      campoObservacoes.addEventListener("input", () => {
+        estadoPedido.observacoes = campoObservacoes.value;
+        if (estadoPedido.itens.length > 0) campoMensagem.value = montarMensagemPedido();
+      });
+
+      botaoCopiarMensagem.addEventListener("click", async () => {
+        try {
+          await navigator.clipboard.writeText(campoMensagem.value);
+          statusPedido.textContent = "Mensagem copiada. Abra o WhatsApp e cole para enviar.";
+        } catch (error) {
+          console.error("Não foi possível copiar a mensagem do pedido.", error);
+          campoMensagem.focus();
+          campoMensagem.select();
+          statusPedido.textContent = "Não foi possível copiar automaticamente. A mensagem está selecionada para você copiar.";
+        }
+      });
+
+      const menuToggle = document.querySelector(".menu-toggle");
+      const navigation = document.querySelector(".primary-navigation");
+
+      document.querySelectorAll(
+        ".primary-navigation > .order-button, .hero-button-outline, .custom-cake-cta",
+      ).forEach((link) => {
+        link.href = "#encomendas";
+        link.removeAttribute("target");
+        link.removeAttribute("rel");
+      });
+
+      function setMenuOpen(isOpen) {
+        menuToggle.setAttribute("aria-expanded", String(isOpen));
+        menuToggle.setAttribute("aria-label", isOpen ? "Fechar menu" : "Abrir menu");
+        navigation.classList.toggle("is-open", isOpen);
+      }
+
+      menuToggle.addEventListener("click", () => {
+        setMenuOpen(menuToggle.getAttribute("aria-expanded") !== "true");
+      });
+
+      navigation.addEventListener("click", (event) => {
+        if (event.target.closest("a")) setMenuOpen(false);
+      });
+
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") setMenuOpen(false);
+      });
+    </script>
+  </body>
+</html>
